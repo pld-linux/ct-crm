@@ -1,12 +1,12 @@
-Summary:	A CRM for small to medium firms.
-Summary(pl):	CRM dla ma³ych i ¶rednich instytucji.
+Summary:	A CRM for small to medium firms
+Summary(pl):	CRM dla ma³ych i ¶rednich instytucji
 Name:		ct-crm
 Version:	1.6
 %define		_pre	pre
 Release:	0.%{_pre}.1
 License:	GPL
 Group:		Applications/WWW
-Source0:	http://dl.sourceforge.net/sourceforge/customer-touch/%{name}%{version}%{_pre}.zip
+Source0:	http://dl.sourceforge.net/customer-touch/%{name}%{version}%{_pre}.zip
 # Source0-md5:	ffe5c4e7b183173832f4c1157a645e05
 Source1:	%{name}-polish_lang
 Patch0:		%{name}-lang_pl.patch
@@ -30,7 +30,6 @@ dla ma³ych i ¶rednch instytucji.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-#install -d $RPM_BUILD_ROOT{uploads,modules,languages,includes,images,email}
 install -d $RPM_BUILD_ROOT%{_cthtmldir}/{Doc/manual_install,languages/polish}
 
 for i in uploads modules languages includes images email ; do
