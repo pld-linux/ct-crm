@@ -1,0 +1,491 @@
+<?
+
+// ----------------------------------------------------------------------
+// CUSTOMER-TOUCH CRM
+// Copyright (C) 2003 by the Customer-Touch Development Team.
+// http://www.customer-touch.com
+// ----------------------------------------------------------------------
+// Based on:
+// CRM COMMERCIAL TRACKING TOOL - http://sourceforge.net/projects/crm-ctt/
+// ----------------------------------------------------------------------
+// LICENSE
+//
+// This program is free software; you can redistribute it and/or
+// modify it under the terms of the GNU General Public License (GPL)
+// as published by the Free Software Foundation; either version 2
+// of the License, or (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// To read the license please visit http://www.gnu.org/copyleft/gpl.html or
+// take a look in the Doc directory
+// ----------------------------------------------------------------------
+// Original Author of this file: Alessandro Grassi
+// ----------------------------------------------------------------------
+
+
+// **********************************************************************
+// LANGUAGE FILE FOR POLISH
+// **********************************************************************
+
+
+// ----------------------------------------------------------------------
+// CREATED BY ALESSANDRO GRASSI - ctcrm at users.sourceforge.net
+// DATE: 25/03/2003
+// NOTE: a.grassi@customer-touch.com
+// ----------------------------------------------------------------------
+
+// ----------------------------------------------------------------------
+// TRANSLATED BY Darryl Mabee- dmabee at users.sourceforge.net
+// DATE: 28/03/2003
+// NOTE: 
+// ----------------------------------------------------------------------
+
+
+
+
+
+//general
+    $arr[DISC_INACT1]="Zostales rozlaczony z powodu $timeout nieaktywnosci.";
+    $arr[DISC_INACT_RELOG]="Zostales rozlaczony. Wprowadz ponownie dane";
+    $arr[PL_RELOG]="Podaj login i haslo";
+    $arr[USR_NAME]="Login";
+    $arr[SAVE_USR]="Zapisz login";
+    $arr[DEL_USR]="Wyczy¶æ login";
+    $arr[SAVE_PWD]="Zapisz haslo";
+    $arr[DEL_PWD]="Wyczy¶æ haslo";
+    $arr[DISCLAIM_LOGIN]="*Te zostan± zachowane lub usuniête z Twojego PC w nastêpnej sesji.";
+    $arr[LOGIN]="Login";
+    $arr[YES]="Tak";
+    $arr[NO]="Nie";
+    $arr[PREV_PAGE]="[wroc do poprzedniej strony]";    
+    $arr[PRINT_BTN]="Drukuj";
+    $arr[NOT_SET]="Nie ustawione";
+    $arr[ALL]="Wszystkie";
+    $arr[DATA_FOR]="dd-mm-yyyy";
+    $arr[GO]="OK";
+    $arr[ERR_PWD]="Bledne haslo, sprobuj ponownie.";
+    $arr[INS_PWD]="Wpisz swoje haslo admina:";
+
+//status names
+    $arr[S1]="Otwarty";
+    $arr[S2]="Czekajacy na weryfikacje";
+    $arr[S3]="Zweryfikowany";
+    $arr[S4]="Odrzucony";
+    $arr[S5]="Zamkniety";
+    $arr[S11]="Usuniety";
+
+//priority names
+    $arr[P1]="Niski";
+    $arr[P2]="Sredni";
+    $arr[P3]="Wysoki";
+    $arr[P4]="Krytyczny";
+
+//modules names
+    $arr[MO_GR1]="Podstawowe Narzedzia";
+    $arr[MO_GR2]="Zaawansowane Narzedzia";
+
+    $arr[MO1]="Dodaj zdarzenie";
+    $arr[MO2]="Lista zdarzen";
+    $arr[MO3]="Szczegoly zdarzen";
+    $arr[MO4]="Lista usuniêtych zdarzen";
+    $arr[MO5]="Zdarzenia do Zweryfikowania";
+    $arr[MO6]="Zdarzenia Zweryfikowane ( Do zamkniecia )";
+    $arr[MO7]="Exportuj dane";
+    $arr[MO8]="Klienci";
+    $arr[MO9]="Statystyki";
+    $arr[MO10]="Grafy";
+    $arr[MO11]="Produkty";
+    $arr[MO12]="Administracja";
+    $arr[MO13]="Pomoc";
+    $arr[MO14]="About";
+    $arr[MO15]="Wyjscie";
+    $arr[MO16]="Backup Bazy";
+    $arr[MO17]="Kalendarz";
+
+    $arr[MOD1]="Dodaj zdarzenie dla klienta";
+    $arr[MOD2]="Pracuj z lista zdarzen by rozwiazac awarie";
+    $arr[MOD3]="Zaawansowane wyszukiwanie zdarzen";
+    $arr[MOD4]="Zajrzyj na liste zdarzen rozwiazanych i usunietych";
+    $arr[MOD5]="Sprawdz i zweryfikuj desk user zadania (pierwsza weryfikacja)";
+    $arr[MOD6]="Sprawdz i zweryfikuj desk user zadania (druga weryfikacja)";
+    $arr[MOD7]="Exportuj dane (CSV)";
+    $arr[MOD8]="Admin Clients: sprawdz, dodaj, edytuj klientow w bazie";
+    $arr[MOD9]="Statystyki i grafy for management";
+    $arr[MOD10]="Statystyki i grafy uzycia strony";
+    $arr[MOD11]="Administrator Products catalog";
+    $arr[MOD12]="interfejs administratora oprogramowania i systemu";
+    $arr[MOD13]="Pomoc w uzyciu programu";
+    $arr[MOD14]="rezygnacja";
+    $arr[MOD15]="Wyjdz z aplikacji";
+    $arr[MOD16]="Zrob backup bazy";
+    $arr[MOD17]="Twoj kalendaz";
+
+//index.php
+    $arr[WELCOME]="Witam w ";
+    $arr[BRIEF]="BRIEF OVERVIEW";
+    $arr[THIS_MOM]="W tej chwili sa";
+    $arr[USERS]="uzytkownicy";
+    $arr[USERS_ADM_EN_COUNT]="uzytkownicy pracujacy nad";
+     $arr[ENTITIES_FOR]="zdarzeniami dla";
+    $arr[CLIENTS_IN_DB]="klientow istniejacych w bazie.";
+    $arr[TOPPR0]="Zdazen dzisiaj:";    
+    $arr[WELCOME3]="Na dzisiaj nie ma zdarzen do zamkniecia, ale sa"; 
+    $arr[ENT_OP_NO_AW]="otwarte zdarzenia czekajace na status zamkniecia";
+    $arr[ASS_TO]="przypisany do";
+    $arr[TOT_EN_STAT]="Razem zdarzen";
+    $arr[OF_STAT]="z ktorych";
+    $arr[OPENED]="Otwartych";
+    $arr[AWAITING]="Oczekujace zamkniecia";
+    $arr[REJECTED]="Odrzuconych";
+    $arr[CLOSED]="Zamknietych";
+    $arr[DELETED]="Usunietych <br>&nbsp;&nbsp;&nbsp;&nbsp;(wlaczajac nieistniejace)";
+    $arr[EXPIRED]="Przedawnione";
+    $arr[NON_EXISTING_AND_DEL]="Nie istniejace <br>&nbsp;&nbsp;&nbsp;&nbsp;(usuniete included)";
+    $arr[ADD_TH_WK]="Zdarzen  dodanych w tym tygodniu ($weeknumber)";
+    $arr[CL_TH_WK]="Zdarzen zamknietych w tym tygodniu ($weeknumber)";
+    $arr[ADD_TH_M]="Zdarzen  dodanych w tym mieisiacu ($month)";
+    $arr[CL_TH_M]="Zdarzen  zamknietych w tym miesiacu ($month)";
+    $arr[ANNUAL_SM]="Roczne podsumowanie";
+    $arr[ON_AVER]="On";
+    $arr[AN_EN]="worked entities, the open-time, time between the closure of an entity and the opening of a new one is";
+    $arr[DDAYS]="dni.<br>";
+    $arr[DATA_OBT1]="Data obtained using <u>all</u> opened entities in database, <u>all</u> year. There was";
+    $arr[DATA_OBT2]="Zdarzen zamknietych przed przypozadkowana data.";
+
+
+//entry.php
+    $arr[TITLE_ENTR1]="Lista zdarzen";
+    $arr[TITLE_ENTR2]="For better detail, please take a look on Entity Advanced Panel<br>Double click to get more information of an entity";
+    $arr[PROGR_ID]="Narastajacy ID";
+    $arr[CLIENT]="Klient";
+    $arr[OPEN_BY]="Otwarte przez";
+    $arr[ASS_TY]="Przypisane do";
+    $arr[STATUS]="Status";
+    $arr[PRIORITY]="Priorytet";
+    $arr[TITLE]="Temat";
+    $arr[DUEDATE]="Date";
+    $arr[ALARM]="Alarm";
+    $arr[ACTIONS]="Akcje";
+    $arr[NO_DUEDATE]="nie ustawione";
+    $arr[NO_ALARM]="Nie ustawione";
+    $arr[EDIT_EN_SIMB]="E";
+    $arr[EDIT_EN_ALT]="Edytuj";
+    $arr[ALARM_EN_SIMB]="A";
+    $arr[ALARM_ALT]="Ustaw alarm";
+    $arr[DELETE_FRO_LIS_SIM]="D";
+    $arr[DELETE_FRO_LIS_ALT]="Usuñ z listy";
+    $arr[VALIDATION_SIM]="V";
+    $arr[VALIDATION_ALT]="Wyslij do zweryfikowania";
+    $arr[DELETE_FRO_LIS_SIM]="X";
+    $arr[DELETE_FRO_LIS_ALT]="Usun z listy";
+    $arr[SURE_ALERT]="Jestes pewien? Kliknij OK by usunac te zdarzenie z listy. Zdarzenie zostanie zapisane w bazie do celow statystycznych.";
+
+
+//editclose.php //editclose.php & entityclose.php
+    $arr[TITLE_ENTR_EC1]="Lista zdarzen do zweryfikowania";
+
+
+//edit.php ; edit2.php ; edit3.php
+    $arr[BEEN_CLOSED]="Zdarzenie zostalo zamkniete, jego ID to";
+    $arr[STEP2]="Dodaj zdarzenie do bazy: krok 2 z 2. W tym oknie mozesz zmienic ID, jesli tego potrzebujesz. Aktualizuj tylko jest wprowadziles jakies zmiany.";
+    $arr[ERR_NO_ACTION]="BLAD. Brak ustawionej akcji. Nic nie dodano.";
+    $arr[CONFIRME_DEL]="Potwierdz usuniecie";
+    $arr[IMPOSS_DEL]="Dopuki zdarzenie jest zamkniete, nie ma mozliwosci usuniecia go!";
+    $arr[CLICK_TO_DEL]="Kliknij by usunac zdarzenie";
+    $arr[AL_HAVE_T_SEL_CUST]="Musisz wybrac klienta!";
+    $arr[AL_HAVE_T_FILL_TITL]="Musisz uzupelnic pole tematu!";
+    $arr[AL_HAVE_T_FILL_DESCR]="Musisz uzupelnic pole opisu!";
+    $arr[STEP1]="Dodaj zdarzenie do bazy: krok 1 z 2";
+    $arr[ARE_WORKING_ON_EN]="Pracujesz nad zdarzeniem";
+    $arr[CREATED_BY_USR]="stworzony przez uzytkownika";
+    $arr[ASSIGN_TO_USR]="przypisany do uzytkownika";
+    $arr[ENT_STATUS]="Status zdarzenia:";
+    $arr[CREATED_DATE]="utwozony";
+    $arr[LAST_UPD_ON]="ostatnia zmiana";
+    $arr[EN_CLOSED_ON]="Te zdarzenie zostalo zamkniete";
+    $arr[SEARCH_SELECT_CUSTOMER]="Szukaj/wybierz klienta";
+    $arr[NEW_EN_COMP]="Nowe zdarzenie: wypelnij pola";
+    $arr[VAL_COMM]="Komentaz (Dodany przy weryfikacji)";
+    $arr[ED_TITL]="Temat";
+    $arr[ED_SOLVE_BY]="Data";
+    $arr[ED_ERR_GEN]="Sprawca awarii";
+    $arr[ED_TRASP]="Trasport";
+    $arr[GO_ON_EN_FILL]="Kontynuuj wypelnanie";
+    $arr[SAVE_UPD_EN]="Zapisz lub uaktualni zdarzenie";
+    $arr[EN_COMMENT]="Dodaj komentarz (Bedzie widoczny dla the Desk User)";
+    $arr[EN_SET_ALARM_ALT]="Ustaw alarm dla tego zdarzenia";
+
+
+//customers.php
+    $arr[CL_INDB]="Klienci obecni w bazie:";
+    $arr[CL_SELECT]="[wybierz klienta]";
+    $arr[CL_FASTNAME]="Krotka nazwa:";
+    $arr[CL_ADD_DEST]="Dodaj wiecej adresow klienta";
+    $arr[CL_SELLMAN]="Sprzedawca";
+    $arr[CL_SELL_INDB]="Sprzedawca w bazie";
+    $arr[CL_SELL_ASS]="Przypisany sprzedawca";
+    $arr[CL_SELL_DELETE]="Usun tego klienta";
+
+
+//del.php
+    $arr[DEL_TITLE]="Entities worked on, validated and deleted from brief list";
+
+
+//db_bkp.php
+    $arr[DB_BKP_PASS]="Wprowadz haslo by zrobic backup bazy";
+    $arr[DB_BKP_BTN]="Rob backup";
+
+
+//csv.php
+    $arr[CSV_SLCT_FIELDS]="Wybiez pola do wyeksportowania";
+    $arr[CSV_DAY_LAST]="Dzien ostatniej zmiany";
+    $arr[CSV_TIME_LAST]="Data ostatniej zmiany";
+    $arr[CSV_CLOSEDATE]="Data zamkniecia";
+    $arr[CSV_WAITING]="Oczekiwanie";
+    $arr[CSV_DESCR]="Opis";
+    $arr[CSV_KIND]="Rodzaj separatora";
+    $arr[CSV_GENERATE]="Twoz plik CSV";
+    $arr[CSV_AL1]="Gdy zobaczysz okna zapisywania, wybiez 'Zapisz plik'";
+    $arr[CSV_AL2]="Okno to moze pojawic sie 2 razy. Jesli tak sie stanie kliknij 'Zapisz' ponownie.";
+    $arr[TITLE_CSV]="Modul eksportu danych";
+    
+
+//navbar.php
+    $arr[TODAY_IS]="Dzis jest ".date("d/m/Y")." godzina ".date("H:i") . ".";
+    $arr[THERE_ARE]="Sa";
+    $arr[OPEN_EN]="otwarte zdarzenia";
+
+//navbar2.php
+    $arr[NO_OPEN]="Nie ma otwartych zdarzen";
+
+
+//send_email.php
+    $arr[TO_EMAIL]="Do";
+    $arr[OBJ_EMAIL]="Cel";
+    $arr[BODY_EMAIL]="Text";
+    $arr[PR_EMAIL]="Priorytet";
+    $arr[URG_EMAIL]="Pilny";
+    $arr[HI_EMAIL]="Wysoki";
+    $arr[MD_EMAIL]="Sredni";
+    $arr[LW_EMAIL]="Niski";
+    $arr[LL_EMAIL]="Bardzo niski";
+    $arr[ATCH_EMAIL]="Dolacz plik";
+    $arr[LEN_EMAIL]="dlugosc";
+    $arr[SD_EMAIL]="Wysli";
+    $arr[CLOSE]="Zamknij";
+
+
+//module.php
+    $arr[MDL_IN_DB]="Moduly obecne w bazie:";
+    $arr[MDL_SELECT]="Wybiez modul";
+    $arr[MDL_NAME]="Nazwa modulu :";
+    $arr[MDL_DSCR]="Opis :";
+    $arr[MDL_GR]="Grupa :";
+    $arr[MDL_ICO]="Icona :";
+    $arr[MDL_ORD]="Kolejnosc :";
+    $arr[MDL_IN_MEN]="W menu :";
+    $arr[MDL_SAVE]="Zapisz zmiany";
+    $arr[MDL_DELETE]="Usun ten modul";
+
+
+//summary.php
+    $arr[DET_ISS]="Szczegolowa lista zdarzen";
+    $arr[SEARC_FOR]="Szukaj";
+    $arr[OP]="Operator";
+    $arr[EXP]="Data zdarzenia";
+    $arr[WAIT]="Oczekiwanie";
+    $arr[INCL_CONT]="Include content";
+    $arr[INCL_DEL]="Include usuniete zdarzenia";
+    $arr[DOWN_CSV]="Sciagnij wynik w csv";
+    $arr[BRIEF_OW]="Brief overview";
+    $arr[SEARCH_TXT]="Szukaj tekstu w zdarzeniu";
+    $arr[RUN_SEARCH]="Szukaj";
+    $arr[CANCEL]="Wyczysc formularz";
+    $arr[PLEASE]="Wybierz kryteria wyszukiwania";
+    $arr[NO_SEARCH]="Nic nie znalezione, zmien kryteria wyszukiwania";
+    $arr[AL_DATE]="Alarm data";
+    $arr[ENT_ATT]="Te zdarzenie ma zalaczony plik";
+    $arr[FILENAME]="Nazwa pliku";
+    $arr[FILESIZE]="Wielkosc pliku";
+    $arr[CR_DATA]="Data utwozenia";
+    $arr[OPEN_WIN]="Otworz nowe okno";
+    $arr[DELETE]="Usun";
+    $arr[ALT_MOD]="Edytuj zdarzenie";
+    $arr[ALT_OPEN_WIN]="Modyfikuj w nowym oknie";
+    $arr[ALT_DELETE]="Delete entity closed and approved";
+    $arr[FOUND_EN]="znaleziono zdarzenia";
+    $arr[SEL]="Wybiez";
+    $arr[SEL_TRA]="* Wybiez *";
+    $arr[ADDRESS]="Adres";
+    $arr[PRODUCT]="Produkty";
+    $arr[PRD_BTN]="E";
+    $arr[NEW_ACTION]="Dodaj nowa akcje";
+    $arr[TYPE_ACTION]="Typ akcji";
+    $arr[DONE]="Zrobione";
+    $arr[VIEW]="Podglad";
+    $arr[ENT_VAL]="Weryfikuj zdarzenie";
+    $arr[ENT_RJ]="Odrzuc zdarzenie";
+
+
+//stats.php
+    $arr[ST_TITLE]="Modul raportujacy";
+    $arr[ST_END]="Koniec raportu";
+    $arr[ST_POSS_RD]="Wybiez raport";
+    $arr[ST_SEL_REC]="Wybiez raport do pokazania";
+    $arr[ST_SUMM]="Podsumowanie";
+    $arr[ST_USR_PR]="Zdarzen na uzytkownika";
+    $arr[ST_PR_ASS]="Zdarzen na przypisanie";
+    $arr[ST_ASS_OW]="Zdarzen na autoprzypisanie";
+    $arr[ST_RETT]="Weryfikowanych zdarzen";
+    $arr[ST_VAL]="Jednostek oczekujacych";
+    $arr[ST_CUST]="Zdarzen na klienta";
+    $arr[ST_RET]="Zdarzen opoznionych";
+    $arr[ST_CLEAR]="Wyczysc liste";
+    $arr[OM_EN]="Rectified were not counted";
+    $arr[ST_COMPR]="Not assigned or assignables also counted";
+    $arr[ST_AND_ASS_TO]="and assigned to";
+    $arr[ST_AU_AS]="Auto-Assigned";
+    $arr[ST_SELF_ASS]="Other users that have opened an entity have assigned to themself";
+    $arr[ST_RET2]="Past Due";
+    $arr[ST_AV]="On average";
+    $arr[ST_ALL]="of all Past Due entities";
+    $arr[ST_NOT_HAVE]="Other users don't have entities in Past Due status";
+    $arr[ST_EN_OP]="entities have been rectified.";
+    $arr[ST_OF_ALL_VAL]="of all entities awaiting closure.";
+
+
+//products.php
+    $arr[PR_IN_CAT]="Produkty w katalogu";
+    $arr[PR_SEL]="Wybiez produkt";
+    $arr[PR_NAME]="Nazwa produktu";
+    $arr[PR_DESCR]="Opis produktu";
+    $arr[PR_IMG]="Zdjecie produktu";
+    $arr[PR_DEL]="Usun produkt";
+
+//admin.php
+    $arr[ADM_TITLE]="Narzedzia administratorskie";
+    $arr[ADM_OPTION]="Wybierz miedzy opcjami";
+    $arr[ADM_SYS_VAR]="Admin Ustawienia systemu";
+    $arr[ADM_FILES]="Podglad plikow";
+    $arr[ADM_CL_CLOSED]="Wyczysc liste z uzunietych zdarzen";
+    $arr[ADM_HELP]="Dodaj / Edytuj temat pomocy";
+    $arr[ADM_DEL_REC]="Usun zapis z bazy (phisically)";
+    $arr[ADM_USERS]="Admin Uzytkownicy";
+    $arr[ADM_USERS_FIELDS]="Admin Pola uzytkownikow";
+    $arr[ADM_CLIENTS_FIELDS]="Admin Pola Klientow";
+    $arr[ADM_ENTITY_FIELDS]="Admin Pola Zdarzen";
+    $arr[ADM_PRODUCTS]="Admin Katalog produktow";
+    $arr[ADM_MODULES]="Admin Moduly";
+    $arr[ADM_ROLES]="Admin Role";
+    $arr[ADM_ACTION_TYPE]="Admin Typy dzialan";
+    $arr[ADM_ERR_TYPE]="Admin Typy bledow";
+    $arr[ADM_LOG]="Ostanie 100 zalogowanych zdazen";
+    $arr[ADM_ACT_SETT]="Aktualne ustawienia systemu";
+    $arr[ADM_OPTION]="Opcje";
+    $arr[ADM_VALUE]="Vartosc";
+    $arr[ADM_DSCR]="Opis";
+    $arr[ADM_UPDATE]="Zmien wartosci";
+    $arr[ADM_FILES_TITLE]="Podglad plikow, posortowane wielkoscia malejaca";
+    $arr[ADM_FID]="FileID";
+    $arr[ADM_F_NAME]="Nazwa Pliku";
+    $arr[ADM_F_CR_DATE]="Data Utworzenia";
+    $arr[ADM_F_SIZE]="Wielkosc";
+    $arr[ADM_F_TYPE]="Typ";
+    $arr[ADM_F_JUMP]="Przeskocz";
+    $arr[ADM_F_DEL]="Usun";
+    $arr[ADM_F_REF]="Odnosnik";
+    $arr[ADM_EN_ST]="Parent entity status";  
+    $arr[ADM_F_TOTAL]="Wszystkie";
+
+
+//date.php
+    $arr[DATE_TITL1]="Ustaw date dla zdarzenia";
+    $arr[DATE_ALERT]="Te zdarzenie ma juz ustawiona date alarmu! Mozesz ja edytowac w tym interfejsie.";
+    $arr[DATE_ACT]="Aktualna data alarmu";
+    $arr[DATE_ALERT2]="The default email set are the ones of owner and assignee";
+    $arr[DATE_ALERT3]="Because any alarm was set, the duedate is suggested by the application as alarm date";
+    $arr[DATE_ALERT4]="Uzyj przecinka by odseparowac adresy mailowe(wazne jesli jest ich wiecej niz jeden na linie),"; 
+    $arr[DATE_ALERT5]="usun adres jesli nie chcesz wyslac do niego alarmu.";
+    $arr[DATE_MORE_ADD]="Wiecej adresow";
+    $arr[DATE_ADRESSES]="Adresy";
+    $arr[DATE_AL_DATE]="Data Alarmu";
+    $arr[DATE_SET]="Ustaw Alarm";
+    $arr[DATE_SUGG]="sugerowany";
+
+
+//user_fields.php
+    $arr[UF_PRESENT_INDB]="Pola uzytkownika obecne w bazie";
+    $arr[UF_SELECT_FIELD]="Wybiez pole";
+    $arr[UF_FIELD_NAME]="Nazwa pola";
+    $arr[UF_FIELD_KIND]="Typ pola";
+    $arr[UF_FIELD_AFTER]="Po polu";
+    $arr[UF_DELETE_FIELD]="Usun to pole";
+
+
+//entity_fields.php
+    $arr[EF_PRESENT_INDB]="Entity fields present in database";
+
+
+//action_admin.php
+    $arr[AA_PRESENT_INDB]="Dzialania obecne w bazie";
+    $arr[AA_SELECT]="Wybierz dzialanie";
+    $arr[AA_ACTION_NAME]="Nazwa dzialania";
+    $arr[AA_DELETE]="Opis dzialania";
+
+
+//error_admin.php
+    $arr[EA_PRESENT_INDB]="Bledy obecne w bazie";
+    $arr[EA_ERROR_NAME]="nazwa bledu";
+    $arr[EA_SELECT]="Zaznacz blad";
+    $arr[EA_DELETE]="Usun ten blad";
+
+
+//users.php
+    $arr[US_PRESENT_INDB]="uzytkownicy w bazie";
+    $arr[US_SELECT]="Wybiez uzytkownika";
+    $arr[US_US_FIELDS_LINK]="Admin user pola";
+    $arr[US_PWD]="haslo";
+    $arr[US_PWD2]="powtorz haslo";
+    $arr[US_ROLE]="Rola";
+    $arr[US_ACTIVE]="Aktywny";
+    $arr[US_LANG]="Jezyk";
+    $arr[US_EMAIL]="E-mail";
+    $arr[US_DEL]="Usun tego uzytkownika";
+
+
+//customer_fields.php
+    $arr[CF_PRESENT_INDB]="Pola uzytkownikow obecne w bazie";
+
+
+//role.php
+    $arr[ROLE_PRESENT_INDB]="Role obecne w bazie";
+    $arr[ROLE_NAME]="Nazwa roli";
+    $arr[ROLE_DESCR]="Opis roli";
+    $arr[ROLE_ACC]="Dostep do";
+    $arr[ROLE_SELECT]="Wybiez role";
+    $arr[ROLE_DELETE]="Usun te role";
+
+
+//action.php
+    $arr[ACT_TITLE]="Opis dzialania";
+    $arr[ACT_KIND]="Rodzaj";
+    $arr[ACT_OPER]="Operator";
+    $arr[ACT_DESCR]="Opis";
+    $arr[ACT_PROGRAM]="Zaprogramowane dla";
+    $arr[ACT_CAL_BUTT]="C";
+    $arr[ACT_EX_NOW]="Wykonaj to teraz";
+    $arr[ACT_EX_LATER]="Zapisz i wykonaj to w przyszlosci";
+    $arr[ACT_DATE_ALERT]="Uzupelnij pole daty.";
+    $arr[ACT_DATE_ALERT2]="Data ma nieprawidlowy format.";
+    $arr[ACT_SET_DATE]="Ustaw date";
+    $arr[ACT_EXEXUTED]="Zrobione";
+    $arr[ACT_EXECUTED_DATE]="Data wykonania";
+
+
+
+//eof    
+?>
