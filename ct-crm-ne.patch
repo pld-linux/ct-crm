@@ -1,0 +1,78 @@
+--- ct/navbar2.php.fix	Fri Feb 21 00:00:00 2003
++++ ct/navbar2.php	Fri Dec 19 12:15:41 2003
+@@ -30,24 +30,62 @@
+ $sql= "SELECT us_type FROM CRMusers WHERE us_name='$name'";
+ $result= mysql_query($sql) or die (mysql_error());
+ $result= mysql_fetch_array($result);
+-$flag=$result[us_type];?><script>
++$flag=$result[us_type];?><script language="javascript">
+ 	function ch_menu(key){
++		var browser;
++		var s = "";
++		function testBrowser(){
++		    if (navigator.appName == "Microsoft Internet Explorer")
++		    {
++		        browser = 'ie';
++		    }
++		    else if (navigator.appName == "Netscape")
++		    {
++		        if (parseInt(navigator.appVersion) == 5)
++		            {
++		            browser = 'ns5';
++		            }
++		        else if (parseInt(navigator.appVersion) == 4)
++		            {
++		            browser = 'ns4';
++		            }
++		    }
++		}
++		
++		function printPage(s){
++		if(browser=='ns4')
++		    {
++		    document.layers.menu.document.write(s);
++		        document.layers.menu.document.close();  
++		    }
++		else if(browser=='ie')  
++		        {
++		        document.all.menu.innerHTML= s;
++		        }
++		else if(browser=='ns5')
++		    {
++		    document.getElementById("menu").innerHTML = s;
++		    }
++		}
++		
+ 		if (key==0){
+-			document.all.menu.innerHTML='<table border="0" cellpadding="0" cellspacing="0" width="280"><tr><?
+-$sql1= "select mo.* from CRMmodule mo, CRMrolelink rl where mo.mo_mg_id=1 and mo_menu=0 and rl.rl_mo_id=mo.mo_id and rl.rl_ro_id=".$flag." order by mo_order";
+-$result1= mysql_query($sql1) or die (mysql_error());
+-	while ($result= mysql_fetch_array($result1)){
+-		echo '<td width="40"><a href="'.$result[mo_file].'"><img src="images/'.$result[mo_icon].'" border="0" alt="'.$result[mo_descr].'"></a></td>';
+-	}?></tr></table>';
++			s='<table border="0" cellpadding="0" cellspacing="0" width="280"><tr><?php
++			$sql1= "select mo.* from CRMmodule mo, CRMrolelink rl where mo.mo_mg_id=1 and mo_menu=0 and rl.rl_mo_id=mo.mo_id and rl.rl_ro_id=".$flag." order by mo_order";
++			$result1= mysql_query($sql1) or die (mysql_error());
++		        while ($result= mysql_fetch_array($result1)){
++	         echo '<td width="40"><a href="'.$result[mo_file].'"><img src="images/'.$result[mo_icon].'" border="0" alt="'.$result[mo_descr].'"></a></td>';
++		 }?></tr></table>';
+ 		}
+ 		else{
+-			document.all.menu.innerHTML='<table border="0" cellpadding="0" cellspacing="0" width="280"><tr><?
+-$sql2= "select mo.* from CRMmodule mo, CRMrolelink rl where mo.mo_mg_id=2 and mo_menu=0 and rl.rl_mo_id=mo.mo_id and rl.rl_ro_id=".$flag." order by mo_order";
+-$result2= mysql_query($sql2) or die (mysql_error());
+-	while ($result= mysql_fetch_array($result2)){
+-		echo '<td width="40"><a href="'.$result[mo_file].'"><img src="images/'.$result[mo_icon].'" border="0"></a></td>';
+-	}?></tr></table>';
++			s='<table border="0" cellpadding="0" cellspacing="0" width="280"><tr><?
++			$sql2= "select mo.* from CRMmodule mo, CRMrolelink rl where mo.mo_mg_id=2 and mo_menu=0 and rl.rl_mo_id=mo.mo_id and rl.rl_ro_id=".$flag." order by mo_order";
++			$result2= mysql_query($sql2) or die (mysql_error());
++		        while ($result= mysql_fetch_array($result2)){
++	                echo '<td width="40"><a href="'.$result[mo_file].'"><img src="images/'.$result[mo_icon].'" border="0"></a></td>';
++		        }?></tr></table>';
+ 		}
++		testBrowser()
++		printPage(s)
+ 	}
+ </script>
+ <table border="0" width="100%">
