@@ -17,6 +17,7 @@ Patch1:		%{name}-dbz.patch
 Patch2:		%{name}-ne.patch
 URL:		http://www.customer-touch.com/
 BuildRequires:	sed
+BuildRequires:	unzip
 Requires:	php-mysql
 Requires:	webserver
 BuildArch:	noarch
