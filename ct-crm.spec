@@ -31,7 +31,7 @@ dla ma³ych i ¶rednch instytucji.
 %install
 rm -rf $RPM_BUILD_ROOT
 #install -d $RPM_BUILD_ROOT{uploads,modules,languages,includes,images,email}
-install -d $RPM_BUILD_ROOT%{_cthtmldir}/Doc/manual_install
+install -d $RPM_BUILD_ROOT%{_cthtmldir}/{Doc/manual_install,languages/polish}
 
 for i in uploads modules languages includes images email ; do
 	cp -Rf $i $RPM_BUILD_ROOT%{_cthtmldir}
@@ -39,12 +39,14 @@ done
 install *.php *.js *.css $RPM_BUILD_ROOT%{_cthtmldir}
 cp -Rf Doc/manual_install/* $RPM_BUILD_ROOT%{_cthtmldir}/Doc/manual_install
 
+install %{SOURCE1} $RPM_BUILD_ROOT%{_cthtmldir}/languages/polish/global.inc.php
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Doc/install.txt Doc/CHANGELOG Doc/README Doc/manual_install/readme
+%doc Doc/*.txt Doc/{CHANGELOG,README} Doc/manual_install/readme
 %dir %{_cthtmldir}
 %{_cthtmldir}/*.css
 %{_cthtmldir}/*.php
