@@ -1,12 +1,11 @@
-%define		_pre	pre
-
 Summary:	A CRM for small to medium firms.
 Summary(pl):	CRM dla ma造ch i 鈔ednich instytucji.
 Name:		ct-crm
 Version:	1.6
-Release:	0.1
+%define		_pre	pre
+Release:	0.%{_pre}.1
 License:	GPL
-Group:		Multimedia
+Group:		Applications/WWW
 Source0:	http://dl.sourceforge.net/sourceforge/customer-touch/%{name}%{version}%{_pre}.zip
 # Source0-md5:	ffe5c4e7b183173832f4c1157a645e05
 Source1:	%{name}-polish_lang
@@ -16,13 +15,14 @@ Requires:	php
 Requires:	webserver
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_cthtmldir	/home/services/httpd/html/ct
+
 %description
 An easy to use and install CRM for small to medium firms.
 
 %description -l pl
-Prosty w u篡ciu i instalacji CRM (Customer Relationship Management) dla ma造ch i 鈔ednch instytucji.
-
-%define		_cthtmldir	/home/services/httpd/html/ct
+Prosty w u篡ciu i instalacji CRM (Customer Relationship Management)
+dla ma造ch i 鈔ednch instytucji.
 
 %prep
 %setup -q -n %{name}%{version}
@@ -32,7 +32,7 @@ Prosty w u篡ciu i instalacji CRM (Customer Relationship Management) dla ma造ch i
 rm -rf $RPM_BUILD_ROOT
 #install -d $RPM_BUILD_ROOT{uploads,modules,languages,includes,images,email}
 install -d $RPM_BUILD_ROOT%{_cthtmldir}/Doc/manual_install
-ls
+
 for i in uploads modules languages includes images email ; do
 	cp -Rf $i $RPM_BUILD_ROOT%{_cthtmldir}
 done
