@@ -241,7 +241,7 @@
 
 
 //csv.php
-    $arr[CSV_SLCT_FIELDS]="Wybiez pola do wyeksportowania";
+    $arr[CSV_SLCT_FIELDS]="Wybierz pola do wyeksportowania";
     $arr[CSV_DAY_LAST]="Dzien ostatniej zmiany";
     $arr[CSV_TIME_LAST]="Data ostatniej zmiany";
     $arr[CSV_CLOSEDATE]="Data zamkniecia";
@@ -281,7 +281,7 @@
 
 //module.php
     $arr[MDL_IN_DB]="Moduly obecne w bazie:";
-    $arr[MDL_SELECT]="Wybiez modul";
+    $arr[MDL_SELECT]="Wybierz modul";
     $arr[MDL_NAME]="Nazwa modulu :";
     $arr[MDL_DSCR]="Opis :";
     $arr[MDL_GR]="Grupa :";
@@ -318,8 +318,8 @@
     $arr[ALT_OPEN_WIN]="Modyfikuj w nowym oknie";
     $arr[ALT_DELETE]="Delete entity closed and approved";
     $arr[FOUND_EN]="znaleziono zdarzenia";
-    $arr[SEL]="Wybiez";
-    $arr[SEL_TRA]="* Wybiez *";
+    $arr[SEL]="Wybierz";
+    $arr[SEL_TRA]="* Wybierz *";
     $arr[ADDRESS]="Adres";
     $arr[PRODUCT]="Produkty";
     $arr[PRD_BTN]="E";
@@ -334,8 +334,8 @@
 //stats.php
     $arr[ST_TITLE]="Modul raportujacy";
     $arr[ST_END]="Koniec raportu";
-    $arr[ST_POSS_RD]="Wybiez raport";
-    $arr[ST_SEL_REC]="Wybiez raport do pokazania";
+    $arr[ST_POSS_RD]="Wybierz raport";
+    $arr[ST_SEL_REC]="Wybierz raport do pokazania";
     $arr[ST_SUMM]="Podsumowanie";
     $arr[ST_USR_PR]="Zdarzen na uzytkownika";
     $arr[ST_PR_ASS]="Zdarzen na przypisanie";
@@ -360,7 +360,7 @@
 
 //products.php
     $arr[PR_IN_CAT]="Produkty w katalogu";
-    $arr[PR_SEL]="Wybiez produkt";
+    $arr[PR_SEL]="Wybierz produkt";
     $arr[PR_NAME]="Nazwa produktu";
     $arr[PR_DESCR]="Opis produktu";
     $arr[PR_IMG]="Zdjecie produktu";
@@ -419,7 +419,7 @@
 
 //user_fields.php
     $arr[UF_PRESENT_INDB]="Pola uzytkownika obecne w bazie";
-    $arr[UF_SELECT_FIELD]="Wybiez pole";
+    $arr[UF_SELECT_FIELD]="Wybierz pole";
     $arr[UF_FIELD_NAME]="Nazwa pola";
     $arr[UF_FIELD_KIND]="Typ pola";
     $arr[UF_FIELD_AFTER]="Po polu";
@@ -446,7 +446,7 @@
 
 //users.php
     $arr[US_PRESENT_INDB]="uzytkownicy w bazie";
-    $arr[US_SELECT]="Wybiez uzytkownika";
+    $arr[US_SELECT]="Wybierz uzytkownika";
     $arr[US_US_FIELDS_LINK]="Admin user pola";
     $arr[US_PWD]="haslo";
     $arr[US_PWD2]="powtorz haslo";
@@ -466,7 +466,7 @@
     $arr[ROLE_NAME]="Nazwa roli";
     $arr[ROLE_DESCR]="Opis roli";
     $arr[ROLE_ACC]="Dostep do";
-    $arr[ROLE_SELECT]="Wybiez role";
+    $arr[ROLE_SELECT]="Wybierz role";
     $arr[ROLE_DELETE]="Usun te role";
 
 
