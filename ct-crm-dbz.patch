@@ -1,0 +1,66 @@
+--- ct-crm1.6/index.php.fix	2003-12-19 13:05:32.647847464 +0100
++++ ct-crm1.6/index.php	2003-12-19 13:07:02.443196496 +0100
+@@ -338,22 +338,22 @@
+ 	print "<tr><td><i>$arr[OF_STAT]</i></td></tr>";
+ 	$pc1 = ($maxE/100); // dit is 1 procent
+ 	$pc2 = ($maxEoNc/100); // dit is 1 procent van Not Closed Not Deleted
+-	$apc = round($maxEo/$pc1); // dit is het percentage
++	if ($pc1) $apc = round($maxEo/$pc1); else $apc=0; // dit is het percentage 
+ 	print "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$arr[OPENED]</td><td width=\"20%\">$maxEo</td><td width=\"20%\">$apc%</td></tr>";
+-	$apc = round($maxEa/$pc1); // dit is het percentage
++	if ($pc1) $apc = round($maxEa/$pc1); else $apc=0; //edit is het percentage
+ 	print "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$arr[AWAITING]</td><td>$maxEa</td><td>$apc%</td></tr>";
+ 
+-	$apc = round($maxEr/$pc1); // dit is het percentage
++	if ($pc1) $apc = round($maxEr/$pc1); else $apc=0; // dit is het percentage
+ 	print "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$arr[REJECTED]</td><td>$maxEr</td><td>$apc%</td></tr>";
+ 
+-	$apc = round($maxEc/$pc1); // dit is het percentage
++	if ($pc1) $apc = round($maxEc/$pc1); else $apc=0; // dit is het percentage
+ 	print "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$arr[CLOSED]</td><td>$maxEc</td><td>$apc%</td></tr>";
+-	$apc = round($delE/$pc1); // dit is het percentage
++	if ($pc1) $apc = round($delE/$pc1); else $apc=0;// dit is het percentage
+ 	print "<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$arr[DELETED]</td><td>$delE</td><td>$apc%</td></tr>";
+ 	print "<tr><td>&nbsp;</td></tr>";
+ 
+ 
+-	$apc = round($expE/$pc2); // dit is het percentage
++	if ($pc1) $apc = round($expE/$pc2); else $apc=0; // dit is het percentage
+ 	if ($apc>30) { 
+ 		$a1 = "<font color='ff0000'>";
+ 		$a2 = "</font>";
+@@ -364,7 +364,7 @@
+ 
+ 	print "<tr><td>$arr[EXPIRED]</td><td>$expE</td><td>$a1$apc%$a2</td></tr>";
+ 	
+-	$apc = round($obsE/$pc1); // dit is het percentage
++	if ($pc1) $apc = round($obsE/$pc1); else $apc=0; // dit is het percentage
+ 	if ($apc>30) { 
+ 		$a1 = "<font color='ff0000'>";
+ 		$a2 = "</font>";
+@@ -374,7 +374,7 @@
+ 	}
+ 
+ 	print "<tr><td>$arr[NON_EXISTING_AND_DEL]</td><td>$obsE</td><td>$a1$apc%$a2</td></tr>";
+-	$apc = round($waiE/$pc1); // dit is het percentage
++	if ($pc1) $apc = round($waiE/$pc1); else $apc=0; // dit is het percentage
+ 		if ($apc>30) { 
+ 		$a1 = "<font color='ff0000'>";
+ 		$a2 = "</font>";
+@@ -479,7 +479,8 @@
+ 	$result= mysql_query($sql) or die (mysql_error());
+ 	$maxW = mysql_fetch_array($result);
+ 	$maxWc = $maxW[0];
+-	print "<tr><td colspan=5>$arr[ON_AVER] $avgc $arr[AN_EN] " . round($avg/$avgc) . " $arr[DDAYS] ";
++	if ($avgc) $zmienna=round($avg/$avgc); else $zmienna=0;
++	print "<tr><td colspan=5>$arr[ON_AVER] $avgc $arr[AN_EN] " . $zmienna . " $arr[DDAYS] ";
+ 	print "<br>";
+ 	
+ 	print "<i>$arr[DATA_OBT1] $maxWc $arr[DATA_OBT2]</i></td></tr>";
+@@ -496,4 +497,4 @@
+ 
+ 
+ print "</body></html>";
+-?>
+\ Brak znaku nowej linii na koñcu pliku
++?>
