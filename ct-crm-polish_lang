@@ -54,9 +54,9 @@
     $arr[PL_RELOG]="Podaj login i haslo";
     $arr[USR_NAME]="Login";
     $arr[SAVE_USR]="Zapisz login";
-    $arr[DEL_USR]="Wyczy¶æ login";
+    $arr[DEL_USR]="Wyczysc login";
     $arr[SAVE_PWD]="Zapisz haslo";
-    $arr[DEL_PWD]="Wyczy¶æ haslo";
+    $arr[DEL_PWD]="Wyczysc haslo";
     $arr[DISCLAIM_LOGIN]="*Te zostan± zachowane lub usuniête z Twojego PC w nastêpnej sesji.";
     $arr[LOGIN]="Login";
     $arr[YES]="Tak";
@@ -126,7 +126,7 @@
 
 //index.php
     $arr[WELCOME]="Witam w ";
-    $arr[BRIEF]="BRIEF OVERVIEW";
+    $arr[BRIEF]="Przeglad zdarzen";
     $arr[THIS_MOM]="W tej chwili sa";
     $arr[USERS]="uzytkownicy";
     $arr[USERS_ADM_EN_COUNT]="uzytkownicy pracujacy nad";
@@ -159,7 +159,7 @@
 
 //entry.php
     $arr[TITLE_ENTR1]="Lista zdarzen";
-    $arr[TITLE_ENTR2]="For better detail, please take a look on Entity Advanced Panel<br>Double click to get more information of an entity";
+    $arr[TITLE_ENTR2]="po wiecej szczegolow zobacz Entity Advanced Panel<br>Double click to get more information of an entity";
     $arr[PROGR_ID]="Narastajacy ID";
     $arr[CLIENT]="Klient";
     $arr[OPEN_BY]="Otwarte przez";
@@ -345,17 +345,17 @@
     $arr[ST_CUST]="Zdarzen na klienta";
     $arr[ST_RET]="Zdarzen opoznionych";
     $arr[ST_CLEAR]="Wyczysc liste";
-    $arr[OM_EN]="Rectified were not counted";
+    $arr[OM_EN]="Rectified nie zostalo zliczone";
     $arr[ST_COMPR]="Not assigned or assignables also counted";
-    $arr[ST_AND_ASS_TO]="and assigned to";
-    $arr[ST_AU_AS]="Auto-Assigned";
+    $arr[ST_AND_ASS_TO]="i przypisane do";
+    $arr[ST_AU_AS]="Automatycznie-Przypisane";
     $arr[ST_SELF_ASS]="Other users that have opened an entity have assigned to themself";
     $arr[ST_RET2]="Past Due";
     $arr[ST_AV]="On average";
     $arr[ST_ALL]="of all Past Due entities";
     $arr[ST_NOT_HAVE]="Other users don't have entities in Past Due status";
     $arr[ST_EN_OP]="entities have been rectified.";
-    $arr[ST_OF_ALL_VAL]="of all entities awaiting closure.";
+    $arr[ST_OF_ALL_VAL]="ze wszystkich zdarzen czekajacych na zamkniecie.";
 
 
 //products.php
@@ -369,17 +369,17 @@
 //admin.php
     $arr[ADM_TITLE]="Narzedzia administratorskie";
     $arr[ADM_OPTION]="Wybierz miedzy opcjami";
-    $arr[ADM_SYS_VAR]="Admin Ustawienia systemu";
+    $arr[ADM_SYS_VAR]="Administracja Ustawieniami systemu";
     $arr[ADM_FILES]="Podglad plikow";
     $arr[ADM_CL_CLOSED]="Wyczysc liste z uzunietych zdarzen";
     $arr[ADM_HELP]="Dodaj / Edytuj temat pomocy";
     $arr[ADM_DEL_REC]="Usun zapis z bazy (phisically)";
-    $arr[ADM_USERS]="Admin Uzytkownicy";
-    $arr[ADM_USERS_FIELDS]="Admin Pola uzytkownikow";
-    $arr[ADM_CLIENTS_FIELDS]="Admin Pola Klientow";
-    $arr[ADM_ENTITY_FIELDS]="Admin Pola Zdarzen";
-    $arr[ADM_PRODUCTS]="Admin Katalog produktow";
-    $arr[ADM_MODULES]="Admin Moduly";
+    $arr[ADM_USERS]="Administruj Uzytkownikami";
+    $arr[ADM_USERS_FIELDS]="Administruj Polami uzytkownikow";
+    $arr[ADM_CLIENTS_FIELDS]="Administruj Polami Klientow";
+    $arr[ADM_ENTITY_FIELDS]="Administruj Polami Zdarzen";
+    $arr[ADM_PRODUCTS]="Administruj Katalogiem produktow";
+    $arr[ADM_MODULES]="Administruj Modulami";
     $arr[ADM_ROLES]="Admin Role";
     $arr[ADM_ACTION_TYPE]="Admin Typy dzialan";
     $arr[ADM_ERR_TYPE]="Admin Typy bledow";
