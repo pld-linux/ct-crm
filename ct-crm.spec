@@ -1,12 +1,11 @@
 # TODO:
-# - move config to /etc
 # - make it work without global_variables=On
 Summary:	A CRM for small to medium firms
 Summary(pl):	CRM dla ma³ych i ¶rednich instytucji
 Name:		ct-crm
 Version:	1.6
 %define		_pre	pre
-Release:	0.%{_pre}.1.3
+Release:	0.%{_pre}.2
 License:	GPL
 Group:		Applications/WWW
 Source0:	http://dl.sourceforge.net/customer-touch/%{name}%{version}%{_pre}.zip
@@ -17,12 +16,14 @@ Patch0:		%{name}-lang_pl.patch
 Patch1:		%{name}-dbz.patch
 Patch2:		%{name}-ne.patch
 URL:		http://www.customer-touch.com/
+BuildRequires:	sed
 Requires:	php-mysql
 Requires:	webserver
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_cthtmldir	%{_datadir}/%{name}
+%define		_configdir	/etc/%{name}
 
 %description
 An easy to use and install CRM for small to medium firms.
@@ -37,9 +38,23 @@ dla ma³ych i ¶rednch instytucji.
 %patch1 -p1
 %patch2 -p1
 
+%build
+for i in *.php; do
+	cat $i | sed -e 's#\"config.inc.php\"#\"%{_configdir}/config.inc.php\"#' > $i.tmp
+	mv -f $i.tmp $i
+done
+for i in */*.php; do
+	cat $i | sed -e 's#\"config.inc.php\"#\"%{_configdir}/config.inc.php\"#' > $i.tmp
+	mv -f $i.tmp $i
+done
+for i in *.php; do
+	cat $i | sed -e 's#\"includes/config.inc.php\"#\"%{_configdir}/config.inc.php\"#' > $i.tmp
+	mv -f $i.tmp $i
+done
+
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_cthtmldir}/{Doc/manual_install,languages/polish},/etc/httpd}
+install -d $RPM_BUILD_ROOT{%{_cthtmldir}/{Doc/manual_install,languages/polish},/etc/httpd,%{_configdir}}
 
 for i in uploads modules languages includes images email ; do
 	cp -Rf $i $RPM_BUILD_ROOT%{_cthtmldir}
@@ -47,7 +62,7 @@ done
 install *.php *.js *.css $RPM_BUILD_ROOT%{_cthtmldir}
 cp -Rf Doc/manual_install/* $RPM_BUILD_ROOT%{_cthtmldir}/Doc/manual_install
 
-install Doc/manual_install/config.inc.php $RPM_BUILD_ROOT%{_cthtmldir}
+touch $RPM_BUILD_ROOT%{_configdir}/config.inc.php
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_cthtmldir}/languages/polish/global.inc.php
 install %{SOURCE2} $RPM_BUILD_ROOT/etc/httpd
@@ -77,8 +92,9 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc Doc/*.txt Doc/{CHANGELOG,README} Doc/manual_install/readme
-%config(noreplace) %verify(not size mtime md5) /etc/httpd/%{name}.conf
-%config(noreplace) %verify(not size mtime md5) %{_cthtmldir}/config.inc.php
+%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/httpd/%{name}.conf
+%attr(750,root,http) %dir %{_configdir}
+%attr(660,root,http) %config(noreplace) %verify(not size mtime md5) %{_configdir}/config.inc.php
 %dir %{_cthtmldir}
 %{_cthtmldir}/*.css
 %{_cthtmldir}/[!^c]*.php
