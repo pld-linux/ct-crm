@@ -46,7 +46,7 @@
 
 
 
-
+$LangEncoding="ISO-8859-2";
 
 //general
     $arr[DISC_INACT1]="Zostales rozlaczony z powodu $timeout nieaktywnosci.";
