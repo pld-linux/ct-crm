@@ -35,7 +35,7 @@ dla ma³ych i ¶rednch instytucji.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_cthtmldir}/{Doc/manual_install,languages/polish}
+install -d $RPM_BUILD_ROOT{%{_cthtmldir}/{Doc/manual_install,languages/polish},/etc/httpd}
 
 for i in uploads modules languages includes images email ; do
 	cp -Rf $i $RPM_BUILD_ROOT%{_cthtmldir}
