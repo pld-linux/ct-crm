@@ -6,7 +6,7 @@ Summary(pl):	CRM dla ma³ych i ¶rednich instytucji
 Name:		ct-crm
 Version:	1.6
 %define		_pre	pre
-Release:	0.%{_pre}.1.2
+Release:	0.%{_pre}.1.3
 License:	GPL
 Group:		Applications/WWW
 Source0:	http://dl.sourceforge.net/customer-touch/%{name}%{version}%{_pre}.zip
@@ -14,6 +14,8 @@ Source0:	http://dl.sourceforge.net/customer-touch/%{name}%{version}%{_pre}.zip
 Source1:	%{name}-polish_lang
 Source2:	%{name}.conf
 Patch0:		%{name}-lang_pl.patch
+Patch1:		%{name}-dbz.patch
+Patch2:		%{name}-ne.patch
 URL:		http://www.customer-touch.com/
 Requires:	php-mysql
 Requires:	webserver
@@ -32,6 +34,8 @@ dla ma³ych i ¶rednch instytucji.
 %prep
 %setup -q -n %{name}%{version}
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
