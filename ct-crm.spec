@@ -30,7 +30,7 @@ An easy to use and install CRM for small to medium firms.
 
 %description -l pl
 Prosty w u¿yciu i instalacji CRM (Customer Relationship Management)
-dla ma³ych i ¶rednch instytucji.
+dla ma³ych i ¶rednich instytucji.
 
 %prep
 %setup -q -n %{name}%{version}
