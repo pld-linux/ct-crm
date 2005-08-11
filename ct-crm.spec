@@ -16,7 +16,6 @@ Patch0:		%{name}-lang_pl.patch
 Patch1:		%{name}-dbz.patch
 Patch2:		%{name}-ne.patch
 URL:		http://www.customer-touch.com/
-BuildRequires:	sed
 BuildRequires:	unzip
 Requires:	php-mysql
 Requires:	webserver
@@ -93,9 +92,9 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc Doc/*.txt Doc/{CHANGELOG,README} Doc/manual_install/readme
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/httpd/%{name}.conf
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/httpd/%{name}.conf
 %attr(750,root,http) %dir %{_configdir}
-%attr(660,root,http) %config(noreplace) %verify(not size mtime md5) %{_configdir}/config.inc.php
+%attr(660,root,http) %config(noreplace) %verify(not md5 mtime size) %{_configdir}/config.inc.php
 %dir %{_cthtmldir}
 %{_cthtmldir}/*.css
 %{_cthtmldir}/[!^c]*.php
