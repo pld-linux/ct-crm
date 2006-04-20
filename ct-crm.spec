@@ -1,10 +1,10 @@
 # TODO:
 # - make it work without global_variables=On
+%define		_pre	pre
 Summary:	A CRM for small to medium firms
 Summary(pl):	CRM dla ma³ych i ¶rednich instytucji
 Name:		ct-crm
 Version:	1.6
-%define		_pre	pre
 Release:	0.%{_pre}.2
 License:	GPL
 Group:		Applications/WWW
@@ -16,15 +16,18 @@ Patch0:		%{name}-lang_pl.patch
 Patch1:		%{name}-dbz.patch
 Patch2:		%{name}-ne.patch
 URL:		http://www.customer-touch.com/
+BuildRequires:	rpmbuild(macros) >= 1.268
+BuildRequires:	sed >= 4.0
 BuildRequires:	unzip
 Requires:	php-mysql
-Requires:	webserver
-BuildRequires:	sed >= 4.0
+Requires:	webapps
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_appdir	%{_datadir}/%{name}
-%define		_sysconfdir	/etc/%{name}
+%define		_webapps	/etc/webapps
+%define		_webapp		%{name}
+%define		_sysconfdir	%{_webapps}/%{_webapp}
+%define		_appdir		%{_datadir}/%{_webapp}
 
 %description
 An easy to use and install CRM for small to medium firms.
@@ -59,36 +62,19 @@ cp -Rf Doc/manual_install/* $RPM_BUILD_ROOT%{_appdir}/Doc/manual_install
 touch $RPM_BUILD_ROOT%{_sysconfdir}/config.inc.php
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_appdir}/languages/polish/global.inc.php
-install %{SOURCE2} $RPM_BUILD_ROOT/etc/httpd
+install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/httpd.conf
+install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/apache.conf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-if [ -f /etc/httpd/httpd.conf ] && ! grep -q "^Include.*%{name}.conf" /etc/httpd/httpd.conf; then
-	echo "Include /etc/httpd/%{name}.conf" >> /etc/httpd/httpd.conf
-fi
-if [ -f /var/lock/subsys/httpd ]; then
-	/usr/sbin/apachectl restart 1>&2
-fi
-
-%preun
-if [ "$1" = "0" ]; then
-	umask 027
-	grep -v "^Include.*%{name}.conf" /etc/httpd/httpd.conf > \
-		/etc/httpd/httpd.conf.tmp
-	mv -f /etc/httpd/httpd.conf.tmp /etc/httpd/httpd.conf
-	if [ -f /var/lock/subsys/httpd ]; then
-		/usr/sbin/apachectl restart 1>&2
-	fi
-fi
-
 %files
 %defattr(644,root,root,755)
 %doc Doc/*.txt Doc/{CHANGELOG,README} Doc/manual_install/readme
-%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/httpd/%{name}.conf
-%attr(750,root,http) %dir %{_sysconfdir}
-%attr(660,root,http) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/config.inc.php
+%dir %attr(750,root,http) %{_sysconfdir}
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/apache.conf
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/httpd.conf
+%attr(640,root,http) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/*.php
 %dir %{_appdir}
 %{_appdir}/*.css
 %{_appdir}/[!^c]*.php
