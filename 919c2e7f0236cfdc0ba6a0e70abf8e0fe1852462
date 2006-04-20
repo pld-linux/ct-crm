@@ -1,0 +1,2 @@
+- added patch fixed java in mozilla and "Division by zero" error
+- release 0.%{_pre}.1.3
