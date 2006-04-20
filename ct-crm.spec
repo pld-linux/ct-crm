@@ -19,11 +19,12 @@ URL:		http://www.customer-touch.com/
 BuildRequires:	unzip
 Requires:	php-mysql
 Requires:	webserver
+BuildRequires:	sed >= 4.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_cthtmldir	%{_datadir}/%{name}
-%define		_configdir	/etc/%{name}
+%define		_appdir	%{_datadir}/%{name}
+%define		_sysconfdir	/etc/%{name}
 
 %description
 An easy to use and install CRM for small to medium firms.
@@ -38,33 +39,26 @@ dla ma³ych i ¶rednich instytucji.
 %patch1 -p1
 %patch2 -p1
 
-%build
-for i in *.php; do
-	cat $i | sed -e 's#\"config.inc.php\"#\"%{_configdir}/config.inc.php\"#' > $i.tmp
-	mv -f $i.tmp $i
-done
-for i in */*.php; do
-	cat $i | sed -e 's#\"config.inc.php\"#\"%{_configdir}/config.inc.php\"#' > $i.tmp
-	mv -f $i.tmp $i
-done
-for i in *.php; do
-	cat $i | sed -e 's#\"includes/config.inc.php\"#\"%{_configdir}/config.inc.php\"#' > $i.tmp
-	mv -f $i.tmp $i
+for i in *.php */*.php; do
+	%{__sed} -i -e '
+		s#\"config.inc.php\"#\"%{_sysconfdir}/config.inc.php\"#
+		s#\"includes/config.inc.php\"#\"%{_sysconfdir}/config.inc.php\"#
+	' $i
 done
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_cthtmldir}/{Doc/manual_install,languages/polish},/etc/httpd,%{_configdir}}
+install -d $RPM_BUILD_ROOT{%{_appdir}/{Doc/manual_install,languages/polish},/etc/httpd,%{_sysconfdir}}
 
 for i in uploads modules languages includes images email ; do
-	cp -Rf $i $RPM_BUILD_ROOT%{_cthtmldir}
+	cp -Rf $i $RPM_BUILD_ROOT%{_appdir}
 done
-install *.php *.js *.css $RPM_BUILD_ROOT%{_cthtmldir}
-cp -Rf Doc/manual_install/* $RPM_BUILD_ROOT%{_cthtmldir}/Doc/manual_install
+install *.php *.js *.css $RPM_BUILD_ROOT%{_appdir}
+cp -Rf Doc/manual_install/* $RPM_BUILD_ROOT%{_appdir}/Doc/manual_install
 
-touch $RPM_BUILD_ROOT%{_configdir}/config.inc.php
+touch $RPM_BUILD_ROOT%{_sysconfdir}/config.inc.php
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_cthtmldir}/languages/polish/global.inc.php
+install %{SOURCE1} $RPM_BUILD_ROOT%{_appdir}/languages/polish/global.inc.php
 install %{SOURCE2} $RPM_BUILD_ROOT/etc/httpd
 
 %clean
@@ -93,23 +87,23 @@ fi
 %defattr(644,root,root,755)
 %doc Doc/*.txt Doc/{CHANGELOG,README} Doc/manual_install/readme
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/httpd/%{name}.conf
-%attr(750,root,http) %dir %{_configdir}
-%attr(660,root,http) %config(noreplace) %verify(not md5 mtime size) %{_configdir}/config.inc.php
-%dir %{_cthtmldir}
-%{_cthtmldir}/*.css
-%{_cthtmldir}/[!^c]*.php
-%{_cthtmldir}/c[asu]*.php
-%{_cthtmldir}/*.js
-%dir %{_cthtmldir}/uploads
-%dir %{_cthtmldir}/modules
-%{_cthtmldir}/modules/mwhois
-%dir %{_cthtmldir}/languages
-%{_cthtmldir}/languages/*/global.inc.php
-%dir %{_cthtmldir}/includes
-%{_cthtmldir}/includes/*.php
-%dir %{_cthtmldir}/images
-%{_cthtmldir}/images/*.gif
-%dir %{_cthtmldir}/email
-%{_cthtmldir}/email/readme.txt
-%dir %{_cthtmldir}/Doc
-%{_cthtmldir}/Doc/manual_install
+%attr(750,root,http) %dir %{_sysconfdir}
+%attr(660,root,http) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/config.inc.php
+%dir %{_appdir}
+%{_appdir}/*.css
+%{_appdir}/[!^c]*.php
+%{_appdir}/c[asu]*.php
+%{_appdir}/*.js
+%dir %{_appdir}/uploads
+%dir %{_appdir}/modules
+%{_appdir}/modules/mwhois
+%dir %{_appdir}/languages
+%{_appdir}/languages/*/global.inc.php
+%dir %{_appdir}/includes
+%{_appdir}/includes/*.php
+%dir %{_appdir}/images
+%{_appdir}/images/*.gif
+%dir %{_appdir}/email
+%{_appdir}/email/readme.txt
+%dir %{_appdir}/Doc
+%{_appdir}/Doc/manual_install
