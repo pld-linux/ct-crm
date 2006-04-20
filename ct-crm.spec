@@ -42,18 +42,16 @@ dla ma³ych i ¶rednich instytucji.
 %patch1 -p1
 %patch2 -p1
 
-for i in *.php */*.php; do
-	%{__sed} -i -e '
-		s#\"config.inc.php\"#\"%{_sysconfdir}/config.inc.php\"#
-		s#\"includes/config.inc.php\"#\"%{_sysconfdir}/config.inc.php\"#
-	' $i
-done
+%{__sed} -i -e '
+	s#"config.inc.php"#"%{_sysconfdir}/config.inc.php"#
+	s#"includes/config.inc.php"#"%{_sysconfdir}/config.inc.php"#
+' *.php */*.php
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_appdir}/{Doc/manual_install,languages/polish},/etc/httpd,%{_sysconfdir}}
 
-for i in uploads modules languages includes images email ; do
+for i in uploads modules languages includes images email; do
 	cp -Rf $i $RPM_BUILD_ROOT%{_appdir}
 done
 install *.php *.js *.css $RPM_BUILD_ROOT%{_appdir}
