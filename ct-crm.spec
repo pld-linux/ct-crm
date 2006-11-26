@@ -1,11 +1,12 @@
 # TODO:
 # - make it work without global_variables=On
 %define		_pre	pre
+%define		_rel	3
 Summary:	A CRM for small to medium firms
 Summary(pl):	CRM dla ma³ych i ¶rednich instytucji
 Name:		ct-crm
 Version:	1.6
-Release:	0.%{_pre}.2
+Release:	0.%{_pre}.%{_rel}
 License:	GPL
 Group:		Applications/WWW
 Source0:	http://dl.sourceforge.net/customer-touch/%{name}%{version}%{_pre}.zip
@@ -19,7 +20,7 @@ URL:		http://www.customer-touch.com/
 BuildRequires:	rpmbuild(macros) >= 1.268
 BuildRequires:	sed >= 4.0
 BuildRequires:	unzip
-Requires:	php-mysql
+Requires:	php(mysql)
 Requires:	webapps
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
