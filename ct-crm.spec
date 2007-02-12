@@ -3,7 +3,7 @@
 %define		_pre	pre
 %define		_rel	3
 Summary:	A CRM for small to medium firms
-Summary(pl.UTF-8):   CRM dla małych i średnich instytucji
+Summary(pl.UTF-8):	CRM dla małych i średnich instytucji
 Name:		ct-crm
 Version:	1.6
 Release:	0.%{_pre}.%{_rel}
