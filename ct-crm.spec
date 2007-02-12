@@ -3,7 +3,7 @@
 %define		_pre	pre
 %define		_rel	3
 Summary:	A CRM for small to medium firms
-Summary(pl):	CRM dla ma≥ych i ∂rednich instytucji
+Summary(pl.UTF-8):   CRM dla ma≈Çych i ≈õrednich instytucji
 Name:		ct-crm
 Version:	1.6
 Release:	0.%{_pre}.%{_rel}
@@ -33,9 +33,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 An easy to use and install CRM for small to medium firms.
 
-%description -l pl
-Prosty w uøyciu i instalacji CRM (Customer Relationship Management)
-dla ma≥ych i ∂rednich instytucji.
+%description -l pl.UTF-8
+Prosty w u≈ºyciu i instalacji CRM (Customer Relationship Management)
+dla ma≈Çych i ≈õrednich instytucji.
 
 %prep
 %setup -q -n %{name}%{version}
